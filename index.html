@@ -11,7 +11,6 @@
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            /* Canlı ve sıcak bir degrade arka plan */
             background: linear-gradient(120deg, #ffd1ff 0%, #fae0e4 50%, #e2f0cb 100%);
             color: #4a4a4a;
             overflow-x: hidden;
@@ -25,13 +24,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Çiçeklerin üzerine tıklanmasın */
-            z-index: 9999; /* Sayfadaki her şeyin üzerinde olsunlar */
+            pointer-events: none;
+            z-index: 9999;
         }
 
-        /* Yukarıdan düşen animasyonlu çiçekler için */
         .flower {
-            position: absolute; /* fixed yerine absolute, container içinde kalacaklar */
+            position: absolute;
             font-size: 24px;
             user-select: none;
             pointer-events: none;
@@ -57,13 +55,13 @@
         h1 {
             font-family: 'Dancing Script', cursive;
             font-size: 3.5rem;
-            color: #b71c1c; /* Koyu zarif kırmızı */
+            color: #b71c1c;
             margin-bottom: 30px;
             text-align: center;
             text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
         }
 
-        /* Daha Şık Zarf Tasarımı */
+        /* Zarf Tasarımı */
         .envelope-wrapper {
             position: relative;
             width: 320px;
@@ -79,7 +77,7 @@
         .envelope-back {
             position: absolute;
             inset: 0;
-            background: #d32f2f; /* Bordo/Kırmızı arka */
+            background: #d32f2f;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
@@ -119,7 +117,6 @@
             text-align: center;
         }
 
-        /* Zarfın ön yüzü ve kapağı */
         .envelope-front {
             position: absolute;
             inset: 0;
@@ -150,7 +147,6 @@
             pointer-events: none;
         }
 
-        /* Zarf Açılma Animasyonu */
         .envelope-wrapper.open .flap {
             transform: rotateX(180deg);
             z-index: 1;
@@ -213,7 +209,6 @@
             max-width: 1000px;
         }
 
-        /* Etkinlik Kartları (Kına ve Düğün) */
         .event-box {
             background: #fff;
             padding: 40px 30px;
@@ -242,7 +237,6 @@
             transform: translateX(-50%);
         }
 
-        /* YEŞİL DALLARI KALDIRDIK - Sadece Çiçekler Var */
         .event-box.dugun::before {
             content: '🌸🌺🌸';
         }
@@ -313,7 +307,6 @@
             margin: 0;
             font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         /* Lokasyon Butonu */
@@ -333,6 +326,121 @@
             background: #ad1457;
             transform: scale(1.05);
         }
+
+        /* YENİ: Hediye & Takı Bölümü */
+        .gift-section {
+            margin-top: 60px;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
+            text-align: center;
+            border: 2px solid #ffb6c1;
+        }
+
+        .gift-section h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #d81b60;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* Işıklı/Neon IBAN Kutusu */
+        .iban-box {
+            background: #2a0815;
+            color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            /* Işık efekti burada */
+            box-shadow: 0 0 15px #ff4081, 0 0 30px rgba(255, 64, 129, 0.5);
+            border: 1px solid #ff80ab;
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 10px #ff4081, 0 0 20px rgba(255, 64, 129, 0.3); }
+            to { box-shadow: 0 0 20px #ff4081, 0 0 40px rgba(255, 64, 129, 0.6); }
+        }
+
+        .iban-box h4 {
+            color: #ffb6c1;
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 8px #ff4081;
+        }
+
+        .iban-box p {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Kredi Kartı Demo Formu */
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .payment-form label {
+            font-weight: 600;
+            color: #880e4f;
+            font-size: 0.9rem;
+        }
+
+        .payment-form select,
+        .payment-form input {
+            padding: 12px 15px;
+            border: 2px solid #fce4ec;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .payment-form select:focus,
+        .payment-form input:focus {
+            border-color: #d81b60;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+        .row > div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* Renkli Gönder Butonu */
+        .submit-btn {
+            margin-top: 10px;
+            background: linear-gradient(45deg, #d81b60, #ff4081);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 64, 129, 0.6);
+        }
+
     </style>
 </head>
 <body>
@@ -382,60 +490,93 @@
             <h3>Büyük Güne Kalan Süre</h3>
             <div class="countdown">
                 <div class="time-box">
-                    <span id="days">00</span>
-                    <p>Gün</p>
+                    <span id="days">00</span><p>Gün</p>
                 </div>
                 <div class="time-box">
-                    <span id="hours">00</span>
-                    <p>Saat</p>
+                    <span id="hours">00</span><p>Saat</p>
                 </div>
                 <div class="time-box">
-                    <span id="minutes">00</span>
-                    <p>Dakika</p>
+                    <span id="minutes">00</span><p>Dakika</p>
                 </div>
                 <div class="time-box">
-                    <span id="seconds">00</span>
-                    <p>Saniye</p>
+                    <span id="seconds">00</span><p>Saniye</p>
                 </div>
             </div>
         </div>
+
+        <div class="gift-section">
+            <h3>Online Takı & Hediye</h3>
+            <p style="color: #666; margin-bottom: 20px;">Mutluluğumuza ortak olmak isterseniz...</p>
+            
+            <div class="iban-box">
+                <h4>SEMANUR ZENGİN</h4>
+                <p>TR12 3456 7890 1234 5678 9012 34</p>
+            </div>
+
+            <div class="payment-form">
+                <label>Göndermek İstediğiniz Hediye Tutarı</label>
+                <select id="takiMiktari">
+                    <option value="">Lütfen seçiniz...</option>
+                    <option value="500">500 TL (Çam Sakızı Çoban Armağanı)</option>
+                    <option value="1000">1.000 TL (Mutluluklar Dilerim)</option>
+                    <option value="ceyrek">Çeyrek Altın Değeri</option>
+                    <option value="yarim">Yarım Altın Değeri</option>
+                    <option value="tam">Tam Altın Değeri</option>
+                </select>
+
+                <label>Kart Üzerindeki İsim</label>
+                <input type="text" placeholder="Ad Soyad" maxlength="50">
+
+                <label>Kart Numarası</label>
+                <input type="text" placeholder="0000 0000 0000 0000" maxlength="19">
+
+                <div class="row">
+                    <div>
+                        <label>Son Kullanma</label>
+                        <input type="text" placeholder="AA/YY" maxlength="5">
+                    </div>
+                    <div>
+                        <label>CVV</label>
+                        <input type="text" placeholder="***" maxlength="3">
+                    </div>
+                </div>
+
+                <button type="button" class="submit-btn" onclick="hediyeGonder()">Hediyeyi Gönder 💖</button>
+            </div>
+        </div>
+
     </div>
 
     <script>
-        // Sayfa yüklendiğinde uçuşan çiçekleri oluştur
         function createFlowers() {
-            const flowers = ['🌸', '🌺', '🌷', '🌿', '✨', '💖']; // Çiçek emojileri
+            const flowers = ['🌸', '🌺', '🌷', '🌿', '✨', '💖'];
             const container = document.getElementById('flower-container');
-            const flowerCount = 35; // Ekranda uçuşacak toplam çiçek sayısı
+            const flowerCount = 35;
 
             for(let i = 0; i < flowerCount; i++) {
                 let flower = document.createElement('div');
                 flower.className = 'flower';
                 flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
                 
-                // Rastgele konum, boyut ve animasyon süresi
                 flower.style.left = Math.random() * 100 + 'vw';
-                flower.style.animationDuration = (Math.random() * 5 + 6) + 's'; // 6-11 saniye arası düşüş
-                flower.style.animationDelay = (Math.random() * 7) + 's'; // Rastgele gecikme ile başla
-                flower.style.fontSize = (Math.random() * 15 + 15) + 'px'; // 15px - 30px arası
+                flower.style.animationDuration = (Math.random() * 5 + 6) + 's';
+                flower.style.animationDelay = (Math.random() * 7) + 's';
+                flower.style.fontSize = (Math.random() * 15 + 15) + 'px';
                 
                 container.appendChild(flower);
             }
         }
         createFlowers();
 
-        // Zarfı Açma Animasyonu
         function openEnvelope() {
             document.getElementById('envelope').classList.add('open');
             document.getElementById('scroll-hint').style.opacity = '1';
             
-            // Tıkladıktan 1.5 saniye sonra otomatik aşağı kaydırsın (İsteğe bağlı)
             setTimeout(() => {
                 document.getElementById('details').scrollIntoView({ behavior: 'smooth' });
             }, 1500);
         }
 
-        // Geri Sayım Aracı (Düğün: 11 Temmuz 2026 19:00:00)
         const weddingDate = new Date("Jul 11, 2026 19:00:00").getTime();
 
         const countdownFunction = setInterval(function() {
@@ -452,12 +593,21 @@
             document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
             document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
 
-            // Süre dolduğunda
             if (distance < 0) {
                 clearInterval(countdownFunction);
                 document.querySelector(".countdown").innerHTML = "<h2>Mutluluklar! 🎉</h2>";
             }
         }, 1000);
+
+        // YENİ: Hediye Gönder Butonu Demo Uyarı Fonksiyonu
+        function hediyeGonder() {
+            const miktar = document.getElementById("takiMiktari").value;
+            if(miktar === "") {
+                alert("Lütfen göndermek istediğiniz hediye tutarını seçin! 🌸");
+            } else {
+                alert("Bu bir demo tasarımıdır! İşlem başarılı gibi görünüyor, hediyeniz için Sema Nur & Emre adına teşekkür ederiz! 🎉💖");
+            }
+        }
     </script>
 </body>
 </html>
